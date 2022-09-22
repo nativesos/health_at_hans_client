@@ -19,7 +19,6 @@ internal fun FooterLogin() {
         modifier = Modifier
             .fillMaxWidth()
             .height(30.dp)
-            .background(color = Color.Cyan)
             .padding(start = 20.dp)
     ) {
 
@@ -39,3 +38,5 @@ internal fun FooterLogin() {
     }
 
 }
+
+

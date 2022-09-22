@@ -1,22 +1,27 @@
-package app.nativesos.healthathansclient.ui.view.login
+package app.nativesos.healthathansclient.login.ui.body
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.*
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import app.nativesos.healthathansclient.ui.login.widget.CustomLoginButton
-import app.nativesos.healthathansclient.ui.login.widget.DocumentLoginOutlineText
-import app.nativesos.healthathansclient.ui.login.widget.SearchClinic
-import app.nativesos.healthathansclient.ui.login.widget.SecureCodeLoginOutlinedText
-import app.nativesos.healthathansclient.ui.login.widget.TittleLoginText
+import app.nativesos.healthathansclient.login.ui.viewmodel.LoginViewModel
+import app.nativesos.healthathansclient.login.ui.widgets.CustomLoginButton
+import app.nativesos.healthathansclient.login.ui.widgets.IdTextLoginWidget
+import app.nativesos.healthathansclient.login.ui.widgets.SearchClinic
+import app.nativesos.healthathansclient.login.ui.widgets.CodeTextLoginWidget
+import app.nativesos.healthathansclient.login.ui.widgets.TittleLoginText
 
 @Composable
-internal fun BodyLogin() {
+internal fun BodyLogin(loginViewModel: LoginViewModel) {
 
-    var documentNumber by remember { mutableStateOf("") }
+    val idPatient:String by loginViewModel.idPatient.observeAsState(initial = "")
+    val tokenPatient: String by loginViewModel.tokenPatient.observeAsState(initial = "")
+    val isValidData: Boolean by loginViewModel.isValidData.observeAsState(initial = false)
+
     val scrollState = rememberScrollState()
 
 
@@ -42,11 +47,20 @@ internal fun BodyLogin() {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
 
-                DocumentLoginOutlineText(documentNumber) { documentNumber = it }
+                IdTextLoginWidget(idPatient){
+                    loginViewModel.onLoginChange(
+                    idPatient = it,
+                    tokenPatient = tokenPatient)
+                }
 
                 Spacer(modifier = Modifier.height(20.dp))
 
-                SecureCodeLoginOutlinedText()
+                CodeTextLoginWidget(tokenPatient){
+                    loginViewModel.onLoginChange(
+                        idPatient = idPatient,
+                        tokenPatient = it,
+                    )
+                }
             }
 
         }
@@ -60,7 +74,7 @@ internal fun BodyLogin() {
             ) {
 
                 /// Button for Iniciar sesion
-                CustomLoginButton()
+                CustomLoginButton(isValidData)
 
                 /// Link para verificar listado de hospitales
                 SearchClinic()

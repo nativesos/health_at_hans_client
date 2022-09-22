@@ -12,11 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HealthAtHansClient"
         tools:targetApi="31">
-        <activity
-            android:name=".ui.layout.login.LoginLayout"
-            android:windowSoftInputMode="adjustResize"
-            android:theme="@style/Theme.HealthAtHansClient"
-            android:exported="false" />
 
         <activity
             android:name=".MainActivity"

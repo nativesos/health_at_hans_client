@@ -3,17 +3,11 @@ package app.nativesos.healthathansclient
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import app.nativesos.healthathansclient.ui.layout.login.LoginLayout
-import app.nativesos.healthathansclient.ui.theme.HealthAtHansClientTheme
-import app.nativesos.healthathansclient.ui.view.login.HeaderLogin
-import app.nativesos.healthathansclient.ui.view.login.LoginView
+import app.nativesos.healthathansclient.home.ui.HomeView
+import app.nativesos.healthathansclient.login.ui.LoginScreen
+
 
 class MainActivity : ComponentActivity() {
 
@@ -22,18 +16,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
 
-
-            HealthAtHansClientTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    LoginView()
-
-                }
-            }
-
+            HomeView()
 
         }
     }
@@ -41,7 +24,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String) {
-    LoginView()
+    HomeView()
 
 }
 
@@ -49,8 +32,7 @@ fun Greeting(name: String) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    HealthAtHansClientTheme {
-
-        Greeting("Android")
-    }
+    Greeting("Android")
 }
+
+
