@@ -25,4 +25,8 @@ Some screenshots of how it will look, note that those that are already made will
 These are just some of the 14 different views that the application will have, what is intended is not only to control all the appointment history but also that the application serves to control the schedule and compliance with treatments and that the doctors in charge can see in real time whether or not the patient is complying with the treatment at home, in addition to many other functions.
 
 Jhonatan Ortiz Cabezas
-Mail: vetiam1987@gmail.com
+
+Mails: 
+vetiam1987@gmail.com
+jhonacode2020@gmail.com
+
