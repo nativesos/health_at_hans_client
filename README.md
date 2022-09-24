@@ -27,6 +27,5 @@ These are just some of the 14 different views that the application will have, wh
 Jhonatan Ortiz Cabezas
 
 Mails: 
-vetiam1987@gmail.com
-jhonacode2020@gmail.com
+vetiam1987@gmail.com  and  jhonacode2020@gmail.com
 
