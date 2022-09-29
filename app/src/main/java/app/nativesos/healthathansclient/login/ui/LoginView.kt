@@ -6,7 +6,7 @@ import androidx.compose.ui.graphics.Color
 import app.nativesos.healthathansclient.login.ui.body.BodyLogin
 import app.nativesos.healthathansclient.login.ui.viewmodel.LoginViewModel
 import app.nativesos.healthathansclient.ui.view.login.FooterLogin
-import app.nativesos.healthathansclient.ui.view.login.HeaderLogin
+import app.nativesos.healthathansclient.login.ui.header.HeaderLogin
 
 @Composable
 fun LoginScreen() {

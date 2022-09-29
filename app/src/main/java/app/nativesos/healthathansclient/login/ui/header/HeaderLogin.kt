@@ -1,4 +1,4 @@
-package app.nativesos.healthathansclient.ui.view.login
+package app.nativesos.healthathansclient.login.ui.header
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*

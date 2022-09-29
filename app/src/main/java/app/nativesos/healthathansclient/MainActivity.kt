@@ -1,12 +1,15 @@
 package app.nativesos.healthathansclient
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
+import android.view.Display
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import app.nativesos.healthathansclient.home.ui.HomeView
 import app.nativesos.healthathansclient.login.ui.LoginScreen
+import app.nativesos.healthathansclient.medicalservice.ui.MedicalServiceScreen
 
 
 class MainActivity : ComponentActivity() {
@@ -14,17 +17,23 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
+
+        /// Verticar Orientation per defailt
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+
         setContent {
 
-            HomeView()
+            //HomeView()
+            MedicalServiceScreen()
 
         }
     }
 }
 
 @Composable
-fun Greeting(name: String) {
-    HomeView()
+fun Greeting() {
+    //HomeView()
+    MedicalServiceScreen()
 
 }
 
@@ -32,7 +41,7 @@ fun Greeting(name: String) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    Greeting("Android")
+    Greeting()
 }
 
 
